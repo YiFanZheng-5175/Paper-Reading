@@ -1,8 +1,9 @@
->领域：时空序列预测
->发表在：ICDE 2023
->模型名字：***S***patio-***T***emporal ***Wave***lets
->文章链接：[When Spatio-Temporal Meet Wavelets: Disentangled Traffic Forecasting via Efficient Spectral Graph Attention Networks](https://ieeexplore.ieee.org/document/10184591)
->代码仓库：[https://github.com/LMissher/STWave](https://github.com/LMissher/STWave)
+领域：时空序列预测
+发表在：ICDE 2023
+模型名字：***S***patio-***T***emporal ***Wave***lets
+文章链接：[When Spatio-Temporal Meet Wavelets: Disentangled Traffic Forecasting via Efficient Spectral Graph Attention Networks](https://ieeexplore.ieee.org/document/10184591)
+代码仓库：[https://github.com/LMissher/STWave](https://github.com/LMissher/STWave)
+
 ![[2023_ICDE_STWave-20250305214138.png]]
 # 一、研究背景与问题提出
 ## 1. 1 研究现状
@@ -49,6 +50,6 @@
 ### 3.2 ESGAT的有效性研究
 ![[2023_ICDE_STWave-20250305222259.png]]
 为展示 ESGAT 的有效性和效率，将 STWave 与基于注意力的 LSGCN、最先进的基线模型 STGODE 和 STFGNN，以及一种 STWave 的变体 “Full”（即 STWave 去掉 ESGAT 中的查询采样策略，计算所有空间相关性）进行对比。
-#### 3.3 图小波位置编码的有效性研究
+### 3.3 图小波位置编码的有效性研究
 ![[2023_ICDE_STWave-20250305222259.png]]
 为验证图小波位置编码的有用性，提出了三种 STWave 模型的变体：“w/o GPE”（不再使用图位置编码）、“EV”（利用图拉普拉斯特征向量作为图位置编码）、“N2V”（使用 Node2vec 学习局部感知图位置编码）。
