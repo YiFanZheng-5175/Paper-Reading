@@ -3,4 +3,4 @@ clutter/
 # 忽略 paper 文件夹
 paper/
 # 忽略 Exp-Log 文件夹
-Exp-Log/
+ExpLog/
