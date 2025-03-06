@@ -1,8 +1,8 @@
->领域：时空序列预测
->发表在：CIKM 2022
->模型名字：***S***patial-***T***emporal ***Id***entity
->文章链接：[Spatial-Temporal Identity: A Simple yet Effective Baseline for Multivariate Time Series Forecasting](https://arxiv.org/abs/2208.05233)
->代码仓库：[BasicTS/baselines/STID](https://github.com/GestaltCogTeam/BasicTS/tree/master/baselines/STID)
+>领域：时空序列预测  
+>发表在：CIKM 2022  
+>模型名字：***S***patial-***T***emporal ***Id***entity  
+>文章链接：[Spatial-Temporal Identity: A Simple yet Effective Baseline for Multivariate Time Series Forecasting](https://arxiv.org/abs/2208.05233)  
+>代码仓库：[BasicTS/baselines/STID](https://github.com/GestaltCogTeam/BasicTS/tree/master/baselines/STID)  
 ![[Conclusion I-20241231132034.png]]
 # 一、研究背景与问题提出
 ## 1. 1 研究现状
@@ -16,7 +16,7 @@ STGNNs使用GCN来处理非欧几里得依赖关系，使用序列模型来捕�
 # 二、问题剖析与解决策略
 ## 2.1 解决方法
 ### 2.1.1 时空标识嵌入矩阵
-STID使用一个空间嵌入矩阵 $\mathbf{E} \in \mathbb{R}^{N \times D}$，以及两个时间嵌入矩阵 $\mathbf{T}^{\mathrm{iD}} \in \mathbb{R}^{N_d \times D}$ 和 $\mathbf{T}^{\mathrm{iW}} \in \mathbb{R}^{N_w \times D}$ 来表示空间和时间标识。${N}$ 是变量的数量（即时间序列的数量），$N_d$ 是一天中的时间片数量（由采样频率决定），$N_w = 7$ 是一周中的天数，$D$ 是隐藏层维度。结果表明，***通过解决样本的不可区分性问题***，我们可以设计出更高效且有效的模型，***而不受时空图神经网络的限制***。
+STID使用一个空间嵌入矩阵 $\mathbf{E} \in \mathbb{R}^{N \times D}$，以及两个时间嵌入矩阵 $\mathbf{T}^{\mathrm{iD}} \in \mathbb{R}^{N_d \times D}$ 和 $\mathbf{T}^{\mathrm{iW}} \in \mathbb{R}^{N_w \times D}$ 来表示空间和时间标识。 $N$是变量的数量（即时间序列的数量）， $N_d$ 是一天中的时间片数量（由采样频率决定）， $N_w = 7$ 是一周中的天数， $D$ 是隐藏层维度。结果表明，***通过解决样本的不可区分性问题***，我们可以设计出更高效且有效的模型，***而不受时空图神经网络的限制***。
 ## 2.2 模型结构
 ![[Conclusion I-20241231132034.png]]
 # 三、实验验证与结果分析 

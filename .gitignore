@@ -1,0 +1,6 @@
+# 忽略 clutter 文件夹
+clutter/
+# 忽略 paper 文件夹
+paper/
+# 忽略 Exp-Log 文件夹
+Exp-Log/
