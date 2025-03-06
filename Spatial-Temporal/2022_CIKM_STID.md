@@ -3,7 +3,7 @@
 >模型名字：***S***patial-***T***emporal ***Id***entity  
 >文章链接：[Spatial-Temporal Identity: A Simple yet Effective Baseline for Multivariate Time Series Forecasting](https://arxiv.org/abs/2208.05233)  
 >代码仓库：[BasicTS/baselines/STID](https://github.com/GestaltCogTeam/BasicTS/tree/master/baselines/STID)  
-![[Conclusion I-20241231132034.png]]
+![20250306181045](http://cdn.mypichub.me/image/20250306181045.png)
 # 一、研究背景与问题提出
 ## 1. 1 研究现状
 STGNNs使用GCN来处理非欧几里得依赖关系，使用序列模型来捕获时间模式。目前的研究一直致力于设计强大的图卷积，或者减少对预定义图结构的依赖（意思是减少对输入数据里邻接矩阵的依赖）。近期的STGNNs变得愈发***复杂***，但***性能提升有限***
