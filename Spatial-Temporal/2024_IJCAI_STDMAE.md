@@ -1,9 +1,9 @@
->领域：时空序列预测
->发表在：IJCAI 2024
->模型名字：***S***patial-***T***emporal-***D***ecoupled ***M***asked Pre-training ***A***uto***E***ncoder
->文章链接：[Spatial-Temporal-Decoupled Masked Pre-training for Spatiotemporal Forecasting](https://arxiv.org/abs/2312.00516)
->代码仓库：[https://github.com/Jimmy-7664/STD-MAE](https://github.com/Jimmy-7664/STD-MAE)
-![[2024_IJCAI_STDMAE-20250302170444.png]]
+>领域：时空序列预测  
+>发表在：IJCAI 2024  
+>模型名字：***S***patial-***T***emporal-***D***ecoupled ***M***asked Pre-training ***A***uto***E***ncoder  
+>文章链接：[Spatial-Temporal-Decoupled Masked Pre-training for Spatiotemporal Forecasting](https://arxiv.org/abs/2312.00516)  
+>代码仓库：[https://github.com/Jimmy-7664/STD-MAE](https://github.com/Jimmy-7664/STD-MAE)  
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302170444.png]].png)
 # 一、研究背景与问题提出
 ## 1.1 研究现状
 1. 时空预测
@@ -20,28 +20,38 @@
 # 二、问题剖析与解决策略
 ## 2.1 问题瓶颈
 ### 2.1.1 时空异质性
-![[2024_IJCAI_STDMAE-20250302172630.png]]
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302172630.png]].png)
 ## 2.2 解决方法
 ### 2.2.1 Mask AutoEncoder Pre-training
-![[2024_IJCAI_STDMAE-20250302173107.png]]
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302173107.png]].png)
 
 通过在Spatial和Temporal上进行Mask AutoEncoder 的 掩码重建训练，来学习***清晰***的时空异质性
 
 ### 2.2.2 Long
-![[2024_IJCAI_STDMAE-20250302173300.png]]
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302173300.png]].png)
 通过把输入从短时间步改成长时间步来学习***完整***的时空异质性
 ## 2.3 模型结构
-![[2024_IJCAI_STDMAE-20250302170444.png]]
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302170444.png]].png)
 # 三、实验验证与结果分析 
 ### 3.1 消融实验
-![[2024_IJCAI_STDMAE-20250302173607.png]]
+#### 3.1.1 消融组件
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302173607.png]].png)
 1. STD-MAE：分别在空间维度和时间维度上Mask
 2. T-MAE：仅在时间维度上Mask
 3. S-MAE：仅在空间维度上Mask
 4. STM-MAE：使用 spatial-temporal-mixed Mask
 5. w/o Mask：不使用Mask Pre-tarin
-### 3.2 案例研究
-#### 3.2.1 预训练中的重建精度
-![[2024_IJCAI_STDMAE-20250302174313.png]]
-#### 3.2.2 对时空Mirage的鲁棒性
-![[2024_IJCAI_STDMAE-20250302174326.png]]
+
+#### 3.1.2 消融下游模型
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307000127.png)
+
+
+### 3.2 效率测试
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307000219.png)
+
+与之前的预训练模型比较
+### 3.3 案例研究
+#### 3.3.1 预训练中的重建精度
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302174313.png]].png)
+#### 3.3.2 对时空Mirage的鲁棒性
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302174326.png]].png)
