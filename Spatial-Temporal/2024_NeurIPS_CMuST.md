@@ -1,5 +1,5 @@
->领域：时空序列预测
->发表在：VLDB 2024
+>领域：时空数据预测
+>发表在：NeurIPS 2024
 >模型名字：***Big*** ***S***patial***T***emporal
 >文章链接：[BigST: Linear Complexity Spatio-Temporal Graph Neural Network for Traffic Forecasting on Large-Scale Road Networks](https://dl.acm.org/doi/abs/10.14778/3641204.3641217)
 >代码仓库：[https://github.com/usail-hkust/BigST.](https://github.com/usail-hkust/BigST)

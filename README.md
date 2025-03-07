@@ -13,10 +13,10 @@
 - [2024_KDD_GinAR](Spatial-Temporal/2024_KDD_GinAR.md)
 - [2024_KDD_HimNet](Spatial-Temporal/2024_KDD_HimNet.md)
 - [2024_KDD_UniST](Spatial-Temporal/2024_KDD_UniST.md)
-- [2024_NeurIPS_CMuST](Spatial-Temporal/2024_NeurIPS_CMuST.md)
+- [TODO_2024_NeurIPS_CMuST](Spatial-Temporal/2024_NeurIPS_CMuST.md)
 - [2024_VLDB_BigST](Spatial-Temporal/2024_VLDB_BigST.md)
-- [2025_AAAI_STDN](Spatial-Temporal/2025_AAAI_STDN.md)
+- [TODO_2025_AAAI_STDN](Spatial-Temporal/2025_AAAI_STDN.md)
 
 ## 时序相关论文
-- [2024_ICLR_FITS](Time-Series/2024_ICLR_FITS.md)
-- [2025_KDD_DUET](Time-Series/2025_KDD_DUET.md) 
+- [TODO_2024_ICLR_FITS](Time-Series/2024_ICLR_FITS.md)
+- [TODO_2025_KDD_DUET](Time-Series/2025_KDD_DUET.md) 
