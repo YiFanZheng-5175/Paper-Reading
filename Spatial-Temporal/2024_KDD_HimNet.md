@@ -1,8 +1,8 @@
->领域：时空序列预测
->发表在：KDD 2024
->模型名字：***H***eterogeneity-***I***nformed ***M***eta-Parameter ***Net***work
->文章链接：[# Heterogeneity-Informed Meta-Parameter Learning for Spatiotemporal Time Series Forecasting](https://arxiv.org/abs/2405.10800)
->代码仓库：[https://github.com/XDZhelheim/HimNet](https://github.com/XDZhelheim/HimNet)
+>领域：时空序列预测  
+>发表在：KDD 2024  
+>模型名字：***H***eterogeneity-***I***nformed ***M***eta-Parameter ***Net***work  
+>文章链接：[Heterogeneity-Informed Meta-Parameter Learning for Spatiotemporal Time Series Forecasting](https://arxiv.org/abs/2405.10800)  
+>代码仓库：[https://github.com/XDZhelheim/HimNet](https://github.com/XDZhelheim/HimNet)  
 ![[2024_IJCAI_STDMAE-20250302170444.png]]
 # 一、研究背景与问题提出
 ## 1. 1 研究现状

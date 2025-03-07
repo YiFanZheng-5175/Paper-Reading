@@ -19,11 +19,11 @@ STGNNs和基于 Transformer 的模型因其出色的性能而非常受欢迎。�
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306201301.png)
 # 三、实验验证与结果分析 
 ### 3.1 消融实验
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306201349.png)
-$w/o$ $E_{a}$ 移除时空嵌入（实际上就是node emb） $E_{a}$ .
-$w/o$ $E_{p}$  移除周期性嵌入 $E_{p}$
-$w/o$ 𝑇-𝑇𝑟𝑎𝑛𝑠. 移除T transformer层
-$w/o$ 𝑆𝑇-𝑇𝑟𝑎𝑛𝑠. 移除temporal transformer 层 and spatial transformer 层
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306201349.png)  
+$w/o$ $E_{a}$ 移除时空嵌入（实际上就是node emb）  $E_{a}$ .  
+$w/o$ $E_{p}$  移除周期性嵌入 $E_{p}$  
+$w/o$ 𝑇-𝑇𝑟𝑎𝑛𝑠. 移除T transformer层  
+$w/o$ 𝑆𝑇-𝑇𝑟𝑎𝑛𝑠. 移除temporal transformer 层   和 spatial transformer 层
 
 ### 3.2 案例学习
 #### 3.2.1 与Node Emb比较
