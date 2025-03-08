@@ -6,7 +6,7 @@
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307152650.png)
 # 一、研究背景与问题提出
 ## 1. 1 研究现状
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307153256.png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307153256.png)  
 近年来，时空图神经网络（Spatial-Temporal Graph Neural Networks，STGNNs）结合序列模型和图卷积（Graph Convolution，GCN）来捕捉多变量时间序列（Multivariate Time Series，MTS）的时空依赖性，并在多变量时间序列预测（Multivariate Time Series Forecasting，MTSF）方面取得了显著进展，但其优越的性能在很大程度上依赖于数据量。***由于实际中的时间序列数据总是不完整的，要获得所有变量的完整历史观测值以进行准确预测是非常具有挑战性的*** 。
 
 更糟糕的是，在某些条件下，一些变量的数据甚至可能长时间不可用。我们可以以一个经典的多变量时间序列应用（即空气质量预测）为例，数据收集器可能由于一些不可预见的因素（例如恶劣天气）而容易出现工作异常 。由于设备维护通常需要数天甚至数月，相应的数据收集器在很长一段时间内只会输出异常值。
@@ -18,7 +18,7 @@
 一方面，由于每个缺失变量通常是由异常值组成的直线序列，STGNN 中的序列模型无法挖掘到任何有价值的模式和信息，从而导致错误的时间依赖关系。
 
 另一方面现有的时空图神经网络（STGNNs）需要使用所有变量的历史观测值来构建空间相关性。由于某些变量的整个历史观测值缺失，现有的 STGNNs 无法在缺失变量和正常变量之间建立空间相关性，从而导致不正确的空间相关性。
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307153256.png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307153256.png)  
 在这种情况下，随着缺失率的增加，上述现象变得更加严重，导致 STGNNs 的性能显著下降。例如，当在 PEMS04 上给定不同的缺失率时，使用一种经典的 STGNN 模型，即时间图卷积网络（TGCN）[79] 进行进一步分析。图 1（d）显示，其性能随着缺失率的增加而恶化。
 
 目前，解决这一挑战的一种直观策略是结合插补和预测方法，并提出两阶段模型。然而，经典的插补方法主要依赖时间序列的上下文信息来恢复缺失值。当某些变量的历史观测值长时间不可用时，这些方法无法实现可靠的恢复效果，因为缺失变量在时间维度上没有任何正常值。
@@ -32,7 +32,7 @@
 # 二、问题剖析与解决策略
 ## 2.1 解决方法
 ### 2.1.1 插值注意力（IA）
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307160157.png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307160157.png)  
 IA 首先生成正常变量和缺失变量之间的对应关系，然后使用注意力将所有缺失变量恢复为合理的表示。这样，序列模型避免了直接挖掘没有任何有价值模式的缺失变量
 
 Comment：实际实现通过一种有点像排列组合的方法来实现

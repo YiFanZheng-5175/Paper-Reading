@@ -28,7 +28,7 @@
 通过在Spatial和Temporal上进行Mask AutoEncoder 的 掩码重建训练，来学习***清晰***的时空异质性
 
 ### 2.2.2 Long
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302173300.png]].png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302173300.png]].png)  
 通过把输入从短时间步改成长时间步来学习***完整***的时空异质性
 ## 2.3 模型结构
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302170444.png]].png)

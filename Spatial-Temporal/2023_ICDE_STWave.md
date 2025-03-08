@@ -30,13 +30,13 @@
 
 利用离散小波变换（DWT）将复杂的交通数据解耦为稳定趋势和波动事件，之后通过双通道时空网络分别对趋势和事件进行建模，最后融合两者信息进行交通预测，以此缓解分布偏移问题，提高模型在非平稳交通数据上的适应性。
 ### 2.1.2 设计合适的 STNet
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204434.png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204434.png)  
 ***（Comment：这也太复杂了）***
 为 STWave 设计专门的时空网络，在事件建模中采用TCN捕捉***波动***的时间变化；在趋势建模中运用具有全局时间感受野的Attention捕捉***稳定***的时间变化；同时使用全 GAT 捕捉基于不同时间变化的动态全局空间相关性。
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204606.png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204606.png)  
 此外，还创新性地采用了查询采样策略(一个降低Attention复杂度的策略)和图小波基图位置编码（一种的位置编码），降低全 GAT 的复杂度并提升其结构感知能力。
 ### 2.1.3 多监督与自适应融合
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204450.png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204450.png)  
 在多监督解码器中，不仅对交通流量或速度进行监督，还添加对稳定趋势的辅助损失，以更好地处理事件中的分布偏移问题。同时，设计自适应事件融合模块（Cross attention），通过注意力机制自适应地判断并融合事件中的有用信息，提高预测的准确性。
 （Comment：corss attention融合，同时监督trend的生成）
 ## 2.3 模型结构
@@ -50,8 +50,8 @@
 - **w/o Tem**：去掉时间神经网络，使模型无法捕捉时间变化。该变体模型在大多数任务上的表现比去掉空间组件的变体模型要好，说明在多变量交通预测任务中，空间维度比时间维度对模型性能的影响更大。
 - **w/o Spa**：去掉 ESGAT（Efficient Spectral Graph Attention Network），模型无法捕捉空间相关性。该变体模型性能明显下降，进一步证明了 ESGAT 在捕捉空间相关性方面的重要性，以及空间维度在多变量交通预测中的关键作用。
 ### 3.2 ESGAT的有效性研究
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204659.png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204659.png)  
 为展示 ESGAT 的有效性和效率，将 STWave 与基于注意力的 LSGCN、最先进的基线模型 STGODE 和 STFGNN，以及一种 STWave 的变体 “Full”（即 STWave 去掉 ESGAT 中的查询采样策略，计算所有空间相关性）进行对比。
 ### 3.3 图小波位置编码的有效性研究
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2023_ICDE_STWave-20250305222259.png]].png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2023_ICDE_STWave-20250305222259.png]].png)  
 为验证图小波位置编码的有用性，提出了三种 STWave 模型的变体：“w/o GPE”（不再使用图位置编码）、“EV”（利用图拉普拉斯特征向量作为图位置编码）、“N2V”（使用 Node2vec 学习局部感知图位置编码）。
