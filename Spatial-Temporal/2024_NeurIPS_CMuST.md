@@ -1,9 +1,9 @@
 >领域：时空序列预测  
 >发表在：NeurIPS 2024  
->模型名字：***C***ontinuous ***Mu***lti-task ***S***patio-***T***emporal
+>模型名字：***C***ontinuous ***Mu***lti-task ***S***patio-***T***emporal  
 >文章链接：[Get Rid of Isolation: A Continuous Multi-task Spatio-Temporal Learning Framework](https://arxiv.org/abs/2410.10524)  
 >代码仓库：[https://github.com/DILab-USTCSZ/CMuST](https://github.com/DILab-USTCSZ/CMuST)  
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308165602.png)
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308165602.png)  
 # 一、研究背景与问题提出
 ## 1. 1 研究现状
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308170109.png)

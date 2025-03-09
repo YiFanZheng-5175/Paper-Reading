@@ -1,20 +1,35 @@
->领域：时间序列预测  
->发表在：ICLR 2024  
->模型名字：***F***requency ***I***nterpolation ***T***ime ***S***eries Analysis Baseline
->文章链接：[FITS: Modeling Time Series with 10K Parameters](https://openreview.net/forum?id=bWcnvZ3qMb)
->代码仓库：[https://github.com/VEWOXIC/FITS](https://github.com/VEWOXIC/FITS)
+>领域：时间序列预测    
+>发表在：ICLR 2024    
+>模型名字：***F***requency ***I***nterpolation ***T***ime ***S***eries Analysis Baseline  
+>文章链接：[FITS: Modeling Time Series with 10K Parameters](https://openreview.net/forum?id=bWcnvZ3qMb)  
+>代码仓库：[https://github.com/VEWOXIC/FITS](https://github.com/VEWOXIC/FITS)  
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308231849.png)
 # 一、研究背景与问题提出
 ## 1.1 研究现状
+时间序列分析在众多领域中起着关键作用，从医疗设备到智能工厂。在这些领域中，通常依赖于像智能传感器这样的边缘设备，这些设备由计算和内存资源有限的微控制器（MCU）驱动。时间序列数据以其内在的复杂性和动态性为特征，通常***呈现出在时间域内既稀疏又分散***的信息。为了有效地利用这些数据，最近的研究产生了复杂的模型和方法。然而，这些模型的***计算和内存成本***使其不适合资源受限的边缘设备。  
 
-## 1.2 引出思考
+另一方面，时间序列数据的***频域表示有望更紧凑、高效地描绘内在模式***。虽然现有研究确实已经在时间序列分析中利用了频域 ——FEDformer使用频谱数据丰富其特征，TimesNet通过卷积神经网络利用高幅度频率进行特征提取 —— 但对频域紧凑性的全面利用在很大程度上仍未得到探索。具体而言，***频域利用复数捕捉幅度和相位信息的能力***未被利用，导致在时间特征提取中仍然依赖计算密集型模型。
+在这项研究中，我们将时间序列分析任务（如预测和重建）重新解释为复频域内的插值练习。从本质上讲，我们通过对提供的片段的频率表示进行插值来生成扩展的时间序列片段。具体来说，对于预测，我们可以通过对给定的回溯窗口进行频率插值来简单地获得预测结果；对于重建，我们通过对其下采样对应物的频率表示进行插值来恢复原始片段。
 
+基于这一见解，我们引入了 FITS（频率插值时间序列分析基线）。FITS 的核心是一个复数值线性层，精心设计用于***学习幅度缩放和相移***，从而促进复频域内的插值。
+
+值得注意的是，虽然 FITS 在频域中进行插值，但它本质上仍然是一个时域模型，集成了 rFFT（Brigham 和 Morrow，1967）操作。也就是说，我们使用 rFFT 将输入片段转换到复频域以进行频率插值。然后，这个插值后的频率数据被映射回时域，得到一个延长的片段，准备进行监督。这种创新设计使 FITS 具有高度的适应性，能够无缝地融入大量下游时域任务中，如预测和异常检测。
+
+除了其精简的线性架构外，FITS 还包含一个低通滤波器。这确保了在保留基本信息的同时实现紧凑的表示。尽管简单，但 FITS 始终能达到最先进的性能。值得注意的是，在大多数情况下，FITS 以不到 10k 个参数实现了这一壮举。这使得它比轻量级时间线性模型 DLinear（Zeng 等人，2023）紧凑 50 倍，并且比其他主流模型小约 10,000 倍。鉴于其在内存和计算方面的效率，FITS 作为部署的理想选择脱颖而出，甚至可以直接在边缘设备上进行训练，无论是用于预测还是异常检测。
 # 二、问题剖析与解决策略
 ## 2.1 解决方法
-
+复杂频率线性插值，低通滤波进一步缩减复杂度，插值target domain共同监督
 ## 2.2 模型结构
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308231849.png)
 # 三、实验验证与结果分析 
-### 3.1 效率分析
+## 3.1 效率分析
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250309183040.png)
+## 3.2 在ETT上的参数研究
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250309183211.png)  
+考虑到这些观察结果，我们发现使用更长的回溯窗口并结合低截止频率可以以最小的计算成本实现接近最先进的性能。例如，当使用 720 的回溯窗口并将截止频率设置为二倍谐波时，FITS 超越了其他方法。值得注意的是，FITS 以仅约 10k 的参数数量实现了最先进的性能。此外，通过将回溯窗口减少到 360，并将截止频率设置为二倍谐波，FITS 已经实现了接近最先进的性能，从而将模型的参数数量进一步减少到 5k 以下。
+## 3.3 异常检测
+![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250309183449.png)
 
-### 3.2 消融实验
+FITS 在各种数据集上表现出色。特别是在 SMD 和 SWaT 数据集上，FITS 实现了近乎完美的 F1 分数，分别约为 99.95% 和 98.9%，展示了其在异常检测和分类方面的精度。相比之下，TimesNet、Anomaly Transformer 和 Stationary Transformer 等模型在这些数据集上难以与 FITS 的性能相媲美。
+
+然而，FITS 在 SMAP 和 MSL 数据集上表现出相对较低的性能。这些数据集由于其二进制事件数据的性质而具有挑战性，FITS 的频域表示可能无法有效地捕捉到这些数据。在这种情况下，时域建模更可取，因为原始数据格式足够紧凑。因此，专门为异常检测设计的模型，如 THOC 和 Omni Anomaly，在这些数据集上实现了更高的 F1 分数。

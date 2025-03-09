@@ -33,8 +33,8 @@
 ## 2.3 模型结构
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302170444.png]].png)
 # 三、实验验证与结果分析 
-### 3.1 消融实验
-#### 3.1.1 消融组件
+## 3.1 消融实验
+### 3.1.1 消融组件
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302173607.png]].png)
 1. STD-MAE：分别在空间维度和时间维度上Mask
 2. T-MAE：仅在时间维度上Mask
@@ -42,16 +42,16 @@
 4. STM-MAE：使用 spatial-temporal-mixed Mask
 5. w/o Mask：不使用Mask Pre-tarin
 
-#### 3.1.2 消融下游模型
+### 3.1.2 消融下游模型
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307000127.png)
 
 
-### 3.2 效率测试
+## 3.2 效率测试
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307000219.png)
 
 与之前的预训练模型比较
-### 3.3 案例研究
-#### 3.3.1 预训练中的重建精度
+## 3.3 案例研究
+### 3.3.1 预训练中的重建精度
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302174313.png]].png)
-#### 3.3.2 对时空Mirage的鲁棒性
+### 3.3.2 对时空Mirage的鲁棒性
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_IJCAI_STDMAE-20250302174326.png]].png)

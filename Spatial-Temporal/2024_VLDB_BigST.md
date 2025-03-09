@@ -47,9 +47,9 @@ Patch-level 就是把特征D乘在T上面
 ## 2.2 模型结构
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_VLDB_BigST-20250302175945.png]].png)
 # 三、实验验证与结果分析 
-### 3.1 效率分析
+## 3.1 效率分析
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308003020.png)
-### 3.2 消融实验
+## 3.2 消融实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_VLDB_BigST-20250302183202.png]].png)  
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_VLDB_BigST-20250302183218.png]].png)  
 

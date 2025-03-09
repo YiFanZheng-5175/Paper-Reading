@@ -63,16 +63,16 @@ $$E_{t p}=ATTENTION\left(X_{p}\right) .$$
 ## 2.2 模型结构
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307234737.png)
 # 三、实验验证与结果分析 
-### 3.1 Performance Study
-#### 3.1.1 短期预测：6->6
+## 3.1 Performance Study
+### 3.1.1 短期预测：6->6
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307234959.png)
-#### 3.1.2 长期预测：64->64
+### 3.1.2 长期预测：64->64
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307235101.png)
-#### 3.1.3 Few-shot Learning	
+### 3.1.3 Few-shot Learning	
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307235259.png)
-#### 3.1.4 Zero-shot Learning
+### 3.1.4 Zero-shot Learning
 见上图
-### 3.2 消融实验
+## 3.2 消融实验
 
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307235542.png)  
 

@@ -21,12 +21,12 @@ STID使用一个空间嵌入矩阵 $\mathbf{E} \in \mathbb{R}^{N \times D}$，�
 ## 2.2 模型结构
 ![20250306185041](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306185041.png)
 # 三、实验验证与结果分析 
-### 3.1 消融实验
+## 3.1 消融实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306195926.png)
 
 所有这些标识矩阵都是有益的。其中***最重要的是空间标识***$\mathbf{E} \in \mathbb{R}^{N \times D}$，这意味着空间上的不可区分性是MTS预测的一个主要瓶颈。此外，时间标识 $T^{TID}$ 和 $T^{DiW}$ 也很重要，因为现实世界中的数据通常包含每日和每周的周期性。
 
-### 3.2 可视化实验
+## 3.2 可视化实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306195953.png)
 
 1. ***首先***，(a)表明不同变量（即时间序列）的标识往往会聚类。这与交通系统的特征相符。例如，道路网络中相邻的交通传感器往往具有相似的模式。

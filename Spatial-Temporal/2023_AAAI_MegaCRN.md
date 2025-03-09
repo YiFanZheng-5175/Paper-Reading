@@ -23,22 +23,22 @@
 ***Comment***：Node emb是静态的，没办法根据输入的不一样来改变，那就通过Encoder的输出（包含了历史信息）来从Node emb中 query出输出，然后这个输出在一起结合放到Decoder里生成信息。
 
 # 三、实验验证与结果分析 
-### 3.1 消融实验
+## 3.1 消融实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306201057.png)
 
 1. Adaptive：保留 MegaCRN 的 GCRN 编码器 - 解码器，让编码器和解码器共享一个自适应图
 2. Momentary：从 MegaCRN 中去掉 Meta - Node Bank，直接使用 Hyper - Network（即 FC 层）根据编码器的隐藏状态生成瞬时图供解码器使用。
 3. Memory：从 MegaCRN 中去掉 Hyper - Network，仅使用 Memory Network（即 Meta - Node Bank）获取增强的隐藏状态，与编码器共享相同的自适应图
 
-### 3.2 效率研究
+## 3.2 效率研究
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306201131.png)
-### 3.3 定性研究
-#### 3.3.1 时空解缠能力验证
+## 3.3 定性研究
+### 3.3.1 时空解缠能力验证
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306201148.png)
 通过 t-SNE 算法将节点嵌入可视化到低维空间，对比自适应图结构学习（adaptive GSL）和元图（meta-graph）的效果。结果显示，元图能够自动对节点（道路链接）进行聚类，并且随着时间从 t 到 t+1 演变，聚类效果持续存在但聚类形状发生变化。这一现象表明模型具备时空解缠能力，即可以区分不同时空模式下的道路链接。
 
 同时也证明了模型具有时间适应性。通过映射不同聚类中道路链接的物理位置，并结合其日平均时间序列图，发现不同聚类在交通模式上存在显著差异，进一步验证了 Meta-Graph Learner 能够明确区分时空异质性。
-#### 3.3.2 事件感知能力验证
+### 3.3.2 事件感知能力验证
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306201202.png)
 
 选取一个发生在特定时间和道路链接上的交通事件案例，对比 MegaCRN 与 GW-Net、CCRNN 的预测结果。在 60 分钟的预测提前期内，MegaCRN 不仅能更好地捕捉正常的交通波动，还能适应包括高峰时段和交通事故等复杂情况，而其他模型在面对突发事件时会出现检测延迟或失败的问题。

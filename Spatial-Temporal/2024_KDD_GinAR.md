@@ -48,7 +48,7 @@ Comment：实际实现通过一种有点像排列组合的方法来实现
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307152650.png)
 # 三、实验验证与结果分析 
 
-### 3.1 消融实验
+## 3.1 消融实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307190517.png)  
 “w/o ia” 表示移除插值注意力  
 “w/o pg” 表示删除预定义图，即仅使用自适应图构建空间相关性；  
@@ -60,5 +60,5 @@ Comment：实际实现通过一种有点像排列组合的方法来实现
 
 移除 IA 后，GinAR 的性能显著下降，证明 IA 是最重要的组件。这是因为 IA 实现了缺失变量的恢复，为纠正时空依赖和避免误差积累提供了重要支持。
 
-### 3.2 可视化实验
+## 3.2 可视化实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307191549.png)

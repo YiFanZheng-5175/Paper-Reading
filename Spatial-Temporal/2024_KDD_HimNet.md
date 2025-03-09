@@ -29,7 +29,7 @@
 ## 2.2 模型结构
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308154752.png)
 # 三、实验验证与结果分析 
-### 3.1 消融实验
+## 3.1 消融实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308164021.png)
 
 1. 无 $E_{t}$：用全为 1 的静态矩阵替换时间嵌入，从而去除时间异质性建模。  
@@ -39,12 +39,12 @@
 5. 无 $SMP$：以同样的方式去除空间元参数。
 6. 无 $STMP$：以同样的方式去除时空混合元参数。
 
-### 3.2 效率研究
+## 3.2 效率研究
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308164459.png)  
 
 我们进一步分析了一个变体 HimNet- $\Theta'$，它去除了元参数池并直接优化了三个扩大的参数空间。HimNet- $\Theta'$ 包含超过 109 亿个参数，在我们能得到的任何 GPU 上都不可用。
 
-### 3.3 案例研究
+## 3.3 案例研究
 
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308164733.png)
 

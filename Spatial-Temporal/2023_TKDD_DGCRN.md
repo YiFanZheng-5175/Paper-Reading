@@ -31,7 +31,7 @@ RNN Decoder先在短的循环长度上进行训练
 ## 2.2 模型结构
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306205343.png)
 # 三、实验验证与结果分析 
-### 3.1 消融实验
+## 3.1 消融实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2023_TKDD_DGCRN-20250303223025.png]].png)
 1. w/o dg：去除动态邻接矩阵和动态图卷积。
 2. w/o preA：去除预定义图卷积。

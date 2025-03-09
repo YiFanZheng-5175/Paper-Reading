@@ -42,16 +42,16 @@
 ## 2.3 模型结构
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2023_ICDE_STWave-20250305214138.png]].png)
 # 三、实验验证与结果分析 
-### 3.1 消融实验
+## 3.1 消融实验
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204636.png)
 - **w/o DF**：去掉解耦流层，直接将交通数据输入模型，遵循端到端范式。该变体模型性能不如 STWave，因为它忽略了对交通时间序列中独立组件的解耦，可能导致过拟合。
 - **w/o AF**：用加法操作代替自适应融合，直接将事件和趋势相加，忽略了对事件的虚假预测。此变体模型性能低于 STWave，说明添加自适应融合模块可以去除不正确的事件信息，对模型性能提升有积极作用。
 - **w/o MS**：去掉趋势监督，模型结果仅由交通数据监督，缺乏平稳监督信号，可能导致不合理的预测。实验显示该变体模型性能不如 STWave，表明趋势监督有助于模型更好地处理事件中的分布偏移问题，提高预测的合理性。
 - **w/o Tem**：去掉时间神经网络，使模型无法捕捉时间变化。该变体模型在大多数任务上的表现比去掉空间组件的变体模型要好，说明在多变量交通预测任务中，空间维度比时间维度对模型性能的影响更大。
 - **w/o Spa**：去掉 ESGAT（Efficient Spectral Graph Attention Network），模型无法捕捉空间相关性。该变体模型性能明显下降，进一步证明了 ESGAT 在捕捉空间相关性方面的重要性，以及空间维度在多变量交通预测中的关键作用。
-### 3.2 ESGAT的有效性研究
+## 3.2 ESGAT的有效性研究
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306204659.png)  
 为展示 ESGAT 的有效性和效率，将 STWave 与基于注意力的 LSGCN、最先进的基线模型 STGODE 和 STFGNN，以及一种 STWave 的变体 “Full”（即 STWave 去掉 ESGAT 中的查询采样策略，计算所有空间相关性）进行对比。
-### 3.3 图小波位置编码的有效性研究
+## 3.3 图小波位置编码的有效性研究
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2023_ICDE_STWave-20250305222259.png]].png)  
 为验证图小波位置编码的有用性，提出了三种 STWave 模型的变体：“w/o GPE”（不再使用图位置编码）、“EV”（利用图拉普拉斯特征向量作为图位置编码）、“N2V”（使用 Node2vec 学习局部感知图位置编码）。
