@@ -1,8 +1,8 @@
->领域：时间序列预测
->发表在：KDD 2025
->模型名字：DUET: ***D***ual Cl***u***stering ***E***nhanced Multivariate ***T***ime Series Forecasting
->文章链接：[DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting](https://arxiv.org/abs/2412.10859)
->代码仓库：[https://github.com/decisionintelligence/TFB](https://github.com/decisionintelligence/TFB)
+>领域：时间序列预测  
+>发表在：KDD 2025  
+>模型名字：***D***ual Cl***u***stering ***E***nhanced Multivariate ***T***ime Series Forecasting  
+>文章链接：[DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting](https://arxiv.org/abs/2412.10859)  
+>代码仓库：[https://github.com/decisionintelligence/TFB](https://github.com/decisionintelligence/TFB)  
 ![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250308232104.png)
 # 一、研究背景与问题提出
 ## 1.1 研究现状
