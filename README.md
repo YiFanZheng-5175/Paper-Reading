@@ -6,14 +6,14 @@
 # 🌌 时空相关论文
 
 ## 📅 2022
-| <div style="width:100px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
+| <div style="width:120px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | ⭐ CIKM                            | <div style="width:500px">STID: Spatial-Temporal Identity: A Simple yet Effective Baseline for Multivariate Time Series Forecasting</div> | [📒](Spatial-Temporal/2022_CIKM_STID.md) |
 
 ---
 
 ## 📅 2023
-| <div style="width:100px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
+| <div style="width:120px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | 💡 AAAI                           | <div style="width:500px">MegaCRN: Meta-Graph Convolutional Recurrent Network for Spatio-Temporal Modeling</div> | [📒](Spatial-Temporal/2023_AAAI_MegaCRN.md) |
 | 💡 CIKM                           | <div style="width:500px">STAEformer: Spatio-Temporal Adaptive Embedding Makes Vanilla Transformer SOTA for Traffic Forecasting</div> | [📒](Spatial-Temporal/2023_CIKM_STAEformer.md) |
@@ -23,7 +23,7 @@
 ---
 
 ## 📅 2024
-| <div style="width:100px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
+| <div style="width:120px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | 💡 ICLR                           | <div style="width:500px">TESTAM: A TIME-ENHANCED SPATIO-TEMPORAL ATTENTION MODEL WITH MIXTURE OF EXPERTS</div> | [📒](Spatial-Temporal/2024_ICLR_TESTAM.md) |
 | 💡 IJCAI                          | <div style="width:500px">STDMAE: Spatial-Temporal-Decoupled Masked Pre-training for Spatiotemporal Forecasting</div> | [📒](Spatial-Temporal/2024_IJCAI_STDMAE.md) |
@@ -37,7 +37,7 @@
 ---
 
 ## 📅 2025
-| <div style="width:100px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
+| <div style="width:120px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | 💡 AAAI                           | <div style="width:500px">STDN: Spatiotemporal-aware Trend-Seasonality Decomposition Network for Traffic Flow Forecasting</div> | [📒](Spatial-Temporal/2025_AAAI_STDN.md) |
 
@@ -46,7 +46,7 @@
 # ⏳ 时序相关论文
 
 ## 📅 2024
-| <div style="width:100px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
+| <div style="width:120px">会议/期刊 | <div style="width:500px">论文标题 | <div style="width:40px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | ⭐ ICLR                           | <div style="width:500px">FITS: Modeling Time Series with 10K Parameters</div> | [📒](Time-Series/2024_ICLR_FITS.md) |
 
