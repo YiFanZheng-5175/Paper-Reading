@@ -139,7 +139,7 @@ r_2 = \frac{\sum_{t,i,j} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u \land \mathbf{A}
 \end{align*}$$
 
 #### 直观理解
-对于一个有 $T$ 个时间步和 $N$ 个样本的数据集，我们构建两个相似性矩阵 $\mathbf{A}^P, \mathbf{A}^F \in \mathbb{R}^{T\times N\times N}$ ，表示成对相似性，即各个时间步的样本之间的相似性。具体来说， $\mathbf{A}_{t,i,j}^P$ 表示时刻 $t$ 时时间序列 $i$ 和 $j$ 在历史时间步的相似性，$\mathbf{A}_{t,i,j}^F$ 表示相应的未来时间步的相似性。利用这些矩阵，我们将总样本数定义为 $T \cdot N \cdot N$ ，历史相似样本数为 $\sum_{i,j,t} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u )$ ，不可区分样本数为 $\sum_{i,j,t} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u \land \mathbf{A}_{t,i,j}^F < e_l )$ 。这里， $e_u = 0.9$ 和 $e_l = 0.5$ 分别是相似性的上限和下限阈值。指示函数 $\mathbb{I}(\cdot)$ 在条件满足时返回\(1\)，否则返回\(0\)。然后我们定义两个指标： $r_1$ ，不可区分样本数与总样本数的比率； $r_2$ ，不可区分样本数与具有相似历史数据的样本数的比率。这些指标提供了互补的见解： $r_1$ 有助于判断不可区分性是否是提高预测性能的主要障碍，而 $r_2$ 则对不可区分程度进行了更细致的评估。
+对于一个有 $T$ 个时间步和 $N$ 个样本的数据集，我们构建两个相似性矩阵 $\mathbf{A}^P, \mathbf{A}^F \in \mathbb{R}^{T\times N\times N}$ ，表示成对相似性，即各个时间步的样本之间的相似性。具体来说， $\mathbf{A}_{t,i,j}^P$ 表示时刻 $t$ 时时间序列 $i$ 和 $j$ 在历史时间步的相似性， $\mathbf{A}_{t,i,j}^F$ 表示相应的未来时间步的相似性。利用这些矩阵，我们将总样本数定义为 $T \cdot N \cdot N$ ，历史相似样本数为 $\sum_{i,j,t} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u )$ ，不可区分样本数为 $\sum_{i,j,t} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u \land \mathbf{A}_{t,i,j}^F < e_l )$ 。这里， $e_u = 0.9$ 和 $e_l = 0.5$ 分别是相似性的上限和下限阈值。指示函数 $\mathbb{I}(\cdot)$ 在条件满足时返回\(1\)，否则返回\(0\)。然后我们定义两个指标： $r_1$ ，不可区分样本数与总样本数的比率； $r_2$ ，不可区分样本数与具有相似历史数据的样本数的比率。这些指标提供了互补的见解： $r_1$ 有助于判断不可区分性是否是提高预测性能的主要障碍，而 $r_2$ 则对不可区分程度进行了更细致的评估。
 
 ![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250312190736.png)
 
