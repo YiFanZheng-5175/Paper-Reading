@@ -1,12 +1,17 @@
+# GinAR: An End-To-End Multivariate Time Series Forecasting Model Suitable for Variable Missing
+
 >领域：时空序列缺失数据预测、时空数据插补  
 >发表在：KDD 2024  
 >模型名字：***G***raph ***In***terpolation ***A***ttention ***R***ecursive Network  
 >文章链接：[GinAR: An End-To-End Multivariate Time Series Forecasting Model Suitable for Variable Missing](https://arxiv.org/abs/2405.11333)  
 >代码仓库：[https://github.com/GestaltCogTeam/GinAR](https://github.com/GestaltCogTeam/GinAR)  
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307152650.png)
-# 一、研究背景与问题提出
-## 1. 1 研究现状
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307153256.png)  
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307152650.png)
+
+## 一、研究背景与问题提出
+
+### 1. 1 研究现状
+
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307153256.png)  
 近年来，时空图神经网络（Spatial-Temporal Graph Neural Networks，STGNNs）结合序列模型和图卷积（Graph Convolution，GCN）来捕捉多变量时间序列（Multivariate Time Series，MTS）的时空依赖性，并在多变量时间序列预测（Multivariate Time Series Forecasting，MTSF）方面取得了显著进展，但其优越的性能在很大程度上依赖于数据量。***由于实际中的时间序列数据总是不完整的，要获得所有变量的完整历史观测值以进行准确预测是非常具有挑战性的*** 。
 
 更糟糕的是，在某些条件下，一些变量的数据甚至可能长时间不可用。我们可以以一个经典的多变量时间序列应用（即空气质量预测）为例，数据收集器可能由于一些不可预见的因素（例如恶劣天气）而容易出现工作异常 。由于设备维护通常需要数天甚至数月，相应的数据收集器在很长一段时间内只会输出异常值。
@@ -18,38 +23,49 @@
 一方面，由于每个缺失变量通常是由异常值组成的直线序列，STGNN 中的序列模型无法挖掘到任何有价值的模式和信息，从而导致错误的时间依赖关系。
 
 另一方面现有的时空图神经网络（STGNNs）需要使用所有变量的历史观测值来构建空间相关性。由于某些变量的整个历史观测值缺失，现有的 STGNNs 无法在缺失变量和正常变量之间建立空间相关性，从而导致不正确的空间相关性。
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307153256.png)  
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307153256.png)  
 在这种情况下，随着缺失率的增加，上述现象变得更加严重，导致 STGNNs 的性能显著下降。例如，当在 PEMS04 上给定不同的缺失率时，使用一种经典的 STGNN 模型，即时间图卷积网络（TGCN）[79] 进行进一步分析。图 1（d）显示，其性能随着缺失率的增加而恶化。
 
 目前，解决这一挑战的一种直观策略是结合插补和预测方法，并提出两阶段模型。然而，经典的插补方法主要依赖时间序列的上下文信息来恢复缺失值。当某些变量的历史观测值长时间不可用时，这些方法无法实现可靠的恢复效果，因为缺失变量在时间维度上没有任何正常值。
 
 除了上述经典方法之外，现有的主流插补方法结合多变量时间序列的上下文信息和空间相关性来生成合理的缺失值。然而，它们也存在两个问题：（1）这些插补方法中***使用上下文信息的组件也会引入不正确的时间依赖性***，限制了数据恢复的有效性并导致误差积累。（2）这些插补方法主要***依赖固定的空间相关性***（如道路网络结构）来建立缺失变量与正常变量之间的对应关系 。***当缺失率很高时***，它们不能充分利用所有正常变量来恢复缺失变量，导致与正常变量没有对应关系的缺失变量无法有效恢复 。总的来说，由于引入了不正确的时间依赖性以及缺失变量与正常变量之间缺乏足够的对应关系，两阶段模型在具有变量缺失的多变量时间序列预测中不能很好地发挥作用。
 
-## 1.2 现存问题
+### 1.2 现存问题
+
 1. 现有插补方法使用上下文信息的组件会引入不正确的时间依赖性
 2. 现有插补方法主要依赖固定的空间相关性
 
-# 二、问题剖析与解决策略
-## 2.1 解决方法
-### 2.1.1 插值注意力（IA）
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307160157.png)  
+## 二、问题剖析与解决策略
+
+### 2.1 解决方法
+
+#### 2.1.1 插值注意力（IA）
+
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307160157.png)  
 IA 首先生成正常变量和缺失变量之间的对应关系，然后使用注意力将所有缺失变量恢复为合理的表示。这样，序列模型避免了直接挖掘没有任何有价值模式的缺失变量
 
 Comment：实际实现通过一种有点像排列组合的方法来实现
-### 2.1.2 自适应图卷积
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307160212.png)  
+
+#### 2.1.2 自适应图卷积
+
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307160212.png)  
 另一方面，对于由 IA 处理的表示，我们使用 AGCN 来重建所有变量之间的空间相关性。由于所有缺失变量都已恢复，AGCN 可以更准确地利用它们的表示来生成更可靠的图结构并获得更准确的空间相关性。  
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307161222.png)  
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307161222.png)  
 用IA的输出来在每一步都调整一下图结构
-### 2.1.3 结合
+
+#### 2.1.3 结合
+
 插值注意力（IA）和自适应图卷积（AGCN））来替换 SRU 中的所有全连接层。这样做是为了在校正时空依赖关系的同时实现端到端预测
 
-## 2.2 模型结构
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307152650.png)
-# 三、实验验证与结果分析 
+### 2.2 模型结构
 
-## 3.1 消融实验
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307190517.png)  
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307152650.png)
+
+## 三、实验验证与结果分析
+
+### 3.1 消融实验
+
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307190517.png)  
 “w/o ia” 表示移除插值注意力  
 “w/o pg” 表示删除预定义图，即仅使用自适应图构建空间相关性；  
 “w/o ag” 表示移除自适应图，主要通过先验知识确定空间相关性。  
@@ -60,5 +76,6 @@ Comment：实际实现通过一种有点像排列组合的方法来实现
 
 移除 IA 后，GinAR 的性能显著下降，证明 IA 是最重要的组件。这是因为 IA 实现了缺失变量的恢复，为纠正时空依赖和避免误差积累提供了重要支持。
 
-## 3.2 可视化实验
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307191549.png)
+### 3.2 可视化实验
+
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307191549.png)

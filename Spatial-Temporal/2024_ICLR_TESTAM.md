@@ -1,11 +1,16 @@
+# TESTAM: A TIME-ENHANCED SPATIO-TEMPORAL ATTENTION MODEL WITH MIXTURE OF EXPERTS
+
 >领域：时空序列预测  
 >发表在：ICLR 2024  
 >模型名字：***t***ime-***e***nhanced ***s***patio-***t***emporal ***a***ttention ***m***ode  
 >文章链接：[TESTAM: A TIME-ENHANCED SPATIO-TEMPORAL ATTENTION MODEL WITH MIXTURE OF EXPERTS](https://arxiv.org/abs/2403.02600)  
 >代码仓库：[https://github.com/HyunWookL/TESTAM](https://github.com/HyunWookL/TESTAM)
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_VLDB_BigST-20250302175945.png]].png)
-# 一、研究背景与问题提出
-## 1. 1 研究现状
+![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_VLDB_BigST-20250302175945.png]].png)
+
+## 一、研究背景与问题提出
+
+### 1. 1 研究现状
+
 为了克服与时空建模相关的挑战，已经提出了许多深度学习模型，包括图卷积网络（GCNs）、循环神经网络（RNNs）和 Transformer。Li等人（2018）引入了 DCRNN，它将图卷积注入到循环单元中，而Yu等人（2018）将图卷积和卷积神经网络（CNNs）结合起来对空间和时间特征进行建模，其性能优于传统方法，如 ARIMA。***尽管基于 GCN 的方法有效，但它们需要空间依赖关系的拓扑特征的先验知识***。***（Comment:此时是预定义静态图）***
 
 此外，由于预定义的图严重依赖欧几里得距离和经验法则（托布勒地理学第一定律），忽略了交通的动态变化（例如高峰时段和事故），因此它很难是一个最优解（Jiang 等人，2023）。由Wu等人（2019）提出的 ***GraphWaveNet 是第一个通过使用节点嵌入来解决此限制的模型***，为空间建模构建可学习的邻接矩阵。受 Graph-WaveNet 和 DCRNN 的成功启发，***一系列研究专注于可学习的图结构***，如 AGCRN（Bai 等人，2020）和 MTGNN（Wu 等人，2020），GCRN（Bai 等人，2020）和 MTGNN（Wu 等人，2020）。***（Comment：此时是可学习的静态图）***
@@ -14,41 +19,54 @@
 
 ***不同的空间建模方法在不同的情况下具有一定的优势***。例如，可学习的静态图建模在重复出现的交通状况下优于动态图（Wu 等人，2020；Jiang 等人，2023）。另一方面，动态空间建模对于非重复出现的交通情况（如事故或突然的速度变化）具有优势（Park 等人，2020；Zheng 等人，2020）。Park 等人（2020）揭示，保留道路信息本身可以提高预测性能，这意味着仅进行时间建模的必要性。Jin 等人（2023）表明，基于时间相似性构建的静态图与动态图建模方法结合时可以带来性能提升。***尽管许多研究已经讨论了有效的空间建模对于交通预测的重要性，但很少有研究关注在交通预测中（即现场交通预测）空间建模方法的动态使用***。
 
-## 1.2 引出思考
+### 1.2 引出思考
+
 1. 能否结合可学习的静态图和动态图？来做到空间建模方法的动态使用？（MoE）
-# 二、问题剖析与解决策略
-## 2.1 解决方法
-### 2.1.1 MoE空间建模
+
+## 二、问题剖析与解决策略
+
+### 2.1 解决方法
+
+#### 2.1.1 MoE空间建模
+
 1. 不进行空间建模的专家  
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306232941.png)
+![2](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306232941.png)
 2. 记忆网络增强的图来建模的专家  
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306232954.png)
+![3](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306232954.png)
 3. 注意力来进行空间建模的专家  
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306233019.png)
-### 2.1.2 注意力时间建模
+![4](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306233019.png)
+
+#### 2.1.2 注意力时间建模
+
 为了消除自回归特性引起的误差传播效应，我们提出了一个时间增强注意力层，帮助模型将其领域从历史的 $T'$ 时间步（即源域）转移到接下来的 *T* 个时间步（即目标域）。
 ***(Comment: 把time_emb加个偏移到target domain 当作kv和原来的x做cross-attention)***
-### 2.1.3 MoE Router
+
+#### 2.1.3 MoE Router
+
 现有的 MoE 在初始化后几乎不会改变其路由决策，因为门控不受回归任务梯度的引导。因此，门控网络会导致 “不匹配”，从而产生无信息且不变的路由。此外，对所有专家使用相同的架构在泛化方面益处较少，因为它们也具有相同的归纳偏差。
 
 记忆网络增强+回归任务后的输出（即通过时间，空间，时间增强层，在最后一个前馈网络前的x）来算出路由概率
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306234043.png)
-### 2.1.4 MoE Loss
+![5](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306234043.png)
+
+#### 2.1.4 MoE Loss
+
 为了实现适合回归问题的细粒度路由，采用两种分类损失：避免最差路由的分类损失和寻找最佳路由的损失函数。受空间混合专家模型（SMoEs）启发，将避免最差路由损失定义为带有伪标签的交叉熵损失
 
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306234448.png)
+![6](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306234448.png)
 
 作者还提出了最佳路由选择损失，以实现更精确的路由。然而，由于交通数据存在噪声且包含许多非平稳特征，最佳路由选择并非易事。因此，作者不是为每个时间步和每个节点选择最佳路由，而是计算节点级的路由。我们的最佳路由选择损失与公式6中的损失类似，只是它计算节点级的伪标签和路由概率，并且伪标签的条件从“$L(y, \hat{y})$大于/小于$q$分位数”变为“$L(y, \hat{y})$大于/小于$(1 - q)$分位数”。
 
 - [ ] 为什么叫节点级，细节待研究
 
+### 2.2 模型结构
 
-## 2.2 模型结构
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_VLDB_BigST-20250302175945.png]].png)
-# 三、实验验证与结果分析 
-## 3.1 消融实验
+![7](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/![[2024_VLDB_BigST-20250302175945.png]].png)
 
-![](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306235121.png)
+## 三、实验验证与结果分析
+
+### 3.1 消融实验
+
+![8](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250306235121.png)
 
 - **w/o gating**：仅使用注意力专家的输出，不进行集成或采用其他门控机制。由于自适应专家或门控网络没有梯度流动，记忆项未被训练，该设置下的架构与GMAN类似。
 - **Ensemble**：不使用混合专家（MoEs），最终输出通过门控网络和每个专家输出的加权求和计算得出。
@@ -56,4 +74,3 @@
 - **Replaced**：不排除任何组件，而是用基于GCN的自适应专家替换恒等专家，减少空间建模的多样性，以此测试不同图结构的原位建模对交通预测是否有帮助这一假设。
 - **w/o TIM**：用没有周期激活函数的简单嵌入向量替换时间信息嵌入（TIM）。
 - **w/o time-enhanced attention**：用文中3.2节描述的基本时间注意力替换时间增强注意力。***（comment：这个好像真的有用）***
-
