@@ -2,6 +2,8 @@
 
 📚 仓库主要用于存放论文笔记，其中涵盖时空（SpatialTemporal）和时序（TimeSeries）相关论文，同时也包括其他领域的论文，仅供个人学习使用。
 
+❗ **注意**：部分数学公式在 GitHub 原生渲染中可能无法正常显示，建议下载后本地用 Markdown 阅读器打开：
+
 ---
 
 ## 🌌 时空相关论文
@@ -63,3 +65,4 @@
 | <div style="width:150px">会议/期刊 | <div style="width:700px">论文标题 | <div style="width:60px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | 💡 KDD                            | <div style="width:700px">DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting</div> | [📒](Time-Series/2025_KDD_DUET.md) |
+
