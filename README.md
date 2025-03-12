@@ -1,18 +1,21 @@
-# 🏰 **简介**  
+# 🏰 README
+
 📚 仓库主要用于存放论文笔记，其中涵盖时空（SpatialTemporal）和时序（TimeSeries）相关论文，同时也包括其他领域的论文，仅供个人学习使用。
 
 ---
 
-# 🌌 时空相关论文
+## 🌌 时空相关论文
 
-## 📅 2022
+### 📅 2022
+
 | <div style="width:150px">会议/期刊 | <div style="width:700px">论文标题 | <div style="width:60px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | ⭐ CIKM                            | <div style="width:700px">STID: Spatial-Temporal Identity: A Simple yet Effective Baseline for Multivariate Time Series Forecasting</div> | [📒](Spatial-Temporal/2022_CIKM_STID.md) |
 
 ---
 
-## 📅 2023
+### 📅 2023
+
 | <div style="width:150px">会议/期刊 | <div style="width:700px">论文标题 | <div style="width:60px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | 💡 AAAI                           | <div style="width:700px">MegaCRN: Meta-Graph Convolutional Recurrent Network for Spatio-Temporal Modeling</div> | [📒](Spatial-Temporal/2023_AAAI_MegaCRN.md) |
@@ -22,7 +25,8 @@
 
 ---
 
-## 📅 2024
+### 📅 2024
+
 | <div style="width:150px">会议/期刊 | <div style="width:700px">论文标题 | <div style="width:60px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | 💡 ICLR                           | <div style="width:700px">TESTAM: A TIME-ENHANCED SPATIO-TEMPORAL ATTENTION MODEL WITH MIXTURE OF EXPERTS</div> | [📒](Spatial-Temporal/2024_ICLR_TESTAM.md) |
@@ -36,24 +40,26 @@
 
 ---
 
-## 📅 2025
+### 📅 2025
+
 | <div style="width:150px">会议/期刊 | <div style="width:700px">论文标题 | <div style="width:60px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | 💡 AAAI                           | <div style="width:700px">STDN: Spatiotemporal-aware Trend-Seasonality Decomposition Network for Traffic Flow Forecasting</div> | [📒](Spatial-Temporal/2025_AAAI_STDN.md) |
 
 ---
 
-# ⏳ 时序相关论文
+## ⏳ 时序相关论文
 
-## 📅 2024
+### 📅 2024
+
 | <div style="width:150px">会议/期刊 | <div style="width:700px">论文标题 | <div style="width:60px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | ⭐ ICLR                           | <div style="width:700px">FITS: Modeling Time Series with 10K Parameters</div> | [📒](Time-Series/2024_ICLR_FITS.md) |
 
 ---
 
-## 📅 2025
+### 📅 2025
+
 | <div style="width:150px">会议/期刊 | <div style="width:700px">论文标题 | <div style="width:60px">链接 |
 |------------------------------------|------------------------------------|------------------------------|
 | 💡 KDD                            | <div style="width:700px">DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting</div> | [📒](Time-Series/2025_KDD_DUET.md) |
-

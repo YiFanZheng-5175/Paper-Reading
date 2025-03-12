@@ -96,7 +96,7 @@ BasicTS + 引入了统一的训练流程，如图 1 所示。这主要包括统�
 
 我们提出一种实用的方法：在重新归一化的数据上进行评估，并纳入诸如平均绝对百分比误差（MAPE）和加权平均绝对百分比误差（WAPE）等额外指标。重要的长时序列预测（LTSF）模型在 ETTh1 和 ETTh2 数据集上进行归一化和重新归一化后的性能总结在表二。我们可以看到，考虑到高的 MAPE 和 WAPE 值时，在重新归一化的数据上的预测性能似乎不太令人满意，这与在归一化数据上获得的看似较低的平均绝对误差（MAE）和均方误差（MSE）值形成对比。
 
-总之，我们在重新归一化的数据上进行评估，采用诸如 MAE、RMSE、MAPE 和 WAPE 等指标。假设 Ω 表示所有观测样本的索引，$y_{i}$ 表示第 $i$ 个实际样本，$\hat{y}_{\bar{z}}$ 表示相应的预测，这些指标定义如下。
+总之，我们在重新归一化的数据上进行评估，采用诸如 MAE、RMSE、MAPE 和 WAPE 等指标。假设 Ω 表示所有观测样本的索引， $y_{i}$ 表示第 $i$ 个实际样本， $\hat{y}_{\bar{z}}$ 表示相应的预测，这些指标定义如下。
 
 $$\begin{array}{rlr} MAE(y, \hat{y}) & =\frac{1}{|\Omega|} \sum_{i \in \Omega}\left|y_{i}-\hat{y}_{i}\right|, RMSE(y, \hat{y})=  \sqrt{\frac{1}{|\Omega|} \sum_{i \in \Omega}\left(y_{i}-\hat{y}_{i}\right)^{2}} \\ MAPE(y, \hat{y}) & =\frac{1}{|\Omega|} \sum_{i \in \Omega}\left|\frac{y_{i}-\hat{y}_{i}}{y_{i}}\right|, WAPE(y, \hat{y})=  \frac{\sum_{i \in \Omega}\left|y_{i}-\hat{y}_{i}\right|}{\sum_{i \in \Omega}\left|y_{i}\right|} \end{array}$$
 
@@ -139,7 +139,7 @@ r_2 = \frac{\sum_{t,i,j} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u \land \mathbf{A}
 \end{align*}$$
 
 #### 直观理解
-对于一个有 $T$ 个时间步和 $N$ 个样本的数据集，我们构建两个相似性矩阵 $\mathbf{A}^P, \mathbf{A}^F \in \mathbb{R}^{T\times N\times N}$ ，表示成对相似性，即各个时间步的样本之间的相似性。具体来说，$\mathbf{A}_{t,i,j}^P$ 表示时刻 $t$ 时时间序列 $i$ 和 $j$ 在历史时间步的相似性，$\mathbf{A}_{t,i,j}^F$ 表示相应的未来时间步的相似性。利用这些矩阵，我们将总样本数定义为 $T \cdot N \cdot N$ ，历史相似样本数为 $\sum_{i,j,t} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u )$ ，不可区分样本数为 $\sum_{i,j,t} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u \land \mathbf{A}_{t,i,j}^F < e_l )$ 。这里，$e_u = 0.9$ 和 $e_l = 0.5$ 分别是相似性的上限和下限阈值。指示函数 $\mathbb{I}(\cdot)$ 在条件满足时返回\(1\)，否则返回\(0\)。然后我们定义两个指标：$r_1$ ，不可区分样本数与总样本数的比率；$r_2$ ，不可区分样本数与具有相似历史数据的样本数的比率。这些指标提供了互补的见解：$r_1$ 有助于判断不可区分性是否是提高预测性能的主要障碍，而$r_2$ 则对不可区分程度进行了更细致的评估。
+对于一个有 $T$ 个时间步和 $N$ 个样本的数据集，我们构建两个相似性矩阵 $\mathbf{A}^P, \mathbf{A}^F \in \mathbb{R}^{T\times N\times N}$ ，表示成对相似性，即各个时间步的样本之间的相似性。具体来说， $\mathbf{A}_{t,i,j}^P$ 表示时刻 $t$ 时时间序列 $i$ 和 $j$ 在历史时间步的相似性，$\mathbf{A}_{t,i,j}^F$ 表示相应的未来时间步的相似性。利用这些矩阵，我们将总样本数定义为 $T \cdot N \cdot N$ ，历史相似样本数为 $\sum_{i,j,t} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u )$ ，不可区分样本数为 $\sum_{i,j,t} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u \land \mathbf{A}_{t,i,j}^F < e_l )$ 。这里， $e_u = 0.9$ 和 $e_l = 0.5$ 分别是相似性的上限和下限阈值。指示函数 $\mathbb{I}(\cdot)$ 在条件满足时返回\(1\)，否则返回\(0\)。然后我们定义两个指标： $r_1$ ，不可区分样本数与总样本数的比率； $r_2$ ，不可区分样本数与具有相似历史数据的样本数的比率。这些指标提供了互补的见解： $r_1$ 有助于判断不可区分性是否是提高预测性能的主要障碍，而 $r_2$ 则对不可区分程度进行了更细致的评估。
 
 ![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250312190736.png)
 
@@ -159,7 +159,7 @@ r_2 = \frac{\sum_{t,i,j} \mathbb{I}( \mathbf{A}_{t,i,j}^P > e_u \land \mathbf{A}
 
 ![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250312191752.png)
 
-nformer、Autoformer 和 FEDformer 是先进的 Transformer 模型，而 Linear、DLinear 和 NLinear 是基本的线性模型。它们都遵循第六节 A3 中描述的 LTSF 设置。我们报告平均绝对误差（MAE）、均方根误差（RMSE）和加权平均百分比误差（WAPE）。此外，我们计算了最佳先进模型和基本模型之间的性能差距，如表三所示。
+Informer、Autoformer 和 FEDformer 是先进的 Transformer 模型，而 Linear、DLinear 和 NLinear 是基本的线性模型。它们都遵循第六节 A3 中描述的 LTSF 设置。我们报告平均绝对误差（MAE）、均方根误差（RMSE）和加权平均百分比误差（WAPE）。此外，我们计算了最佳先进模型和基本模型之间的性能差距，如表三所示。
 
 ![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250312191833.png)  
 
