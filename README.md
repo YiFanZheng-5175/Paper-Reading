@@ -24,6 +24,7 @@
 | 💡 CIKM        | STAEformer: Spatio-Temporal Adaptive Embedding Makes Vanilla Transformer SOTA for Traffic Forecasting | [📒](Spatial-Temporal/2023_CIKM_STAEformer.md) |
 | 💡 ICDE        | STWave: When Spatio-Temporal Meet Wavelets: Disentangled Traffic Forecasting via Efficient Spectral Graph Attention Networks | [📒](Spatial-Temporal/2023_ICDE_STWave.md) |
 | 💡 TKDD        | DGCRN: Dynamic Graph Convolutional Recurrent Network for Traffic Prediction: Benchmark and Solution | [📒](Spatial-Temporal/2023_TKDD_DGCRN.md) |
+| 💡 NeurIPS        | GPT-ST: Generative Pre-Training of Spatio-Temporal Graph Neural Networks | [📒](Spatial-Temporal/2023_NeurIPS_GPS-ST.md) |
 
 ---
 
