@@ -57,6 +57,7 @@
 
 | 会议/期刊       | 论文标题                                                                                     | 笔记链接 |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
+| NeurIPS        | ⭐CATS: Are Self-Attentions Effective for Time Series Forecasting? | [📒](Time-Series/2024_NeurIPS_CATS.md) |
 | ICLR        | ⭐FITS: Modeling Time Series with 10K Parameters | [📒](Time-Series/2024_ICLR_FITS.md) |
 
 ---
@@ -65,4 +66,5 @@
 
 | 会议/期刊       | 论文标题                                                                                     | 笔记链接 |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
+| Arxiv       | 📚A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective | [📒](Time-Series/2025_Arxiv_Survey%20Of%20Channel%20Strategy.md) |
 | KDD         | 💡DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting | [📒](Time-Series/2025_KDD_DUET.md) |

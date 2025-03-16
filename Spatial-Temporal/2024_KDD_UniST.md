@@ -42,7 +42,7 @@ UniST 通过由数据、架构、预训练和提示学习这四个关键组件�
 
 ![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307234608.png)
 
-#### 2.1.2 掩码标记建模
+#### 2.1.2 掩码Token建模
 
 ![1](https://picgo-for-paper-reading.oss-cn-beijing.aliyuncs.com/img/20250307234624.png)
 
