@@ -10,7 +10,7 @@
 
 ### 📅 2022
 
-| 会议/期刊       | 论文标题                                                                                     | 笔记链接 |
+| Pub       | Title                                                                                     | Link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | CIKM        | ⭐STID: Spatial-Temporal Identity: A Simple yet Effective Baseline for Multivariate Time Series Forecasting | [📒](Spatial-Temporal/2022_CIKM_STID.md) |
 
@@ -18,7 +18,7 @@
 
 ### 📅 2023
 
-| 会议/期刊       | 论文标题                                                                                     | 笔记链接 |
+| Pub       | Title                                                                                     | Link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | AAAI        | 💡MegaCRN: Meta-Graph Convolutional Recurrent Network for Spatio-Temporal Modeling | [📒](Spatial-Temporal/2023_AAAI_MegaCRN.md) |
 | CIKM        | 💡STAEformer: Spatio-Temporal Adaptive Embedding Makes Vanilla Transformer SOTA for Traffic Forecasting | [📒](Spatial-Temporal/2023_CIKM_STAEformer.md) |
@@ -30,7 +30,7 @@
 
 ### 📅 2024
 
-| 会议/期刊       | 论文标题                                                                                     | 笔记链接 |
+| Pub       | Title                                                                                     | Link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | ICLR        | 💡TESTAM: A TIME-ENHANCED SPATIO-TEMPORAL ATTENTION MODEL WITH MIXTURE OF EXPERTS | [📒](Spatial-Temporal/2024_ICLR_TESTAM.md) |
 | IJCAI       | 💡STDMAE: Spatial-Temporal-Decoupled Masked Pre-training for Spatiotemporal Forecasting | [📒](Spatial-Temporal/2024_IJCAI_STDMAE.md) |
@@ -45,7 +45,7 @@
 
 ### 📅 2025
 
-| 会议/期刊       | 论文标题                                                                                     | 笔记链接 |
+| Pub       | Title                                                                                     | Link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | AAAI        | 💡STDN: Spatiotemporal-aware Trend-Seasonality Decomposition Network for Traffic Flow Forecasting | [📒](Spatial-Temporal/2025_AAAI_STDN.md) |
 
@@ -53,9 +53,15 @@
 
 ## ⏳ 时序相关论文
 
+### 🗓️ 2023
+
+| Pub       | Title                                                                                     | Link |
+|-----------------|---------------------------------------------------------------------------------------------|:--------:|
+| AAAI        | ⭐Linear: Are Transformers Effective for Time Series Forecasting? | [📒](Time-Series/2023_AAAI_Linear.md) |
+
 ### 🗓️ 2024
 
-| 会议/期刊       | 论文标题                                                                                     | 笔记链接 |
+| Pub       | Title                                                                                     | Link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | NeurIPS        | ⭐CATS: Are Self-Attentions Effective for Time Series Forecasting? | [📒](Time-Series/2024_NeurIPS_CATS.md) |
 | ICLR        | ⭐FITS: Modeling Time Series with 10K Parameters | [📒](Time-Series/2024_ICLR_FITS.md) |
@@ -64,7 +70,7 @@
 
 ### 🗓️ 2025
 
-| 会议/期刊       | 论文标题                                                                                     | 笔记链接 |
+| Pub       | Title                                                                                     | Link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | Arxiv       | 📚A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective | [📒](Time-Series/2025_Arxiv_Survey%20Of%20Channel%20Strategy.md) |
 | KDD         | 💡DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting | [📒](Time-Series/2025_KDD_DUET.md) |
