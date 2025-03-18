@@ -24,7 +24,7 @@
 | CIKM        | 💡STAEformer: Spatio-Temporal Adaptive Embedding Makes Vanilla Transformer SOTA for Traffic Forecasting | [📒](Spatial-Temporal/2023_CIKM_STAEformer.md) |
 | ICDE        | 💡STWave: When Spatio-Temporal Meet Wavelets: Disentangled Traffic Forecasting via Efficient Spectral Graph Attention Networks | [📒](Spatial-Temporal/2023_ICDE_STWave.md) |
 | TKDD        | 💡DGCRN: Dynamic Graph Convolutional Recurrent Network for Traffic Prediction: Benchmark and Solution | [📒](Spatial-Temporal/2023_TKDD_DGCRN.md) |
-| NIPS        | 💡GPT-ST: Generative Pre-Training of Spatio-Temporal Graph Neural Networks | [📒](Spatial-Temporal/2023_NeurIPS_GPS-ST.md) |
+| NeurIPS     | 💡GPT-ST: Generative Pre-Training of Spatio-Temporal Graph Neural Networks | [📒](Spatial-Temporal/2023_NeurIPS_GPS-ST.md) |
 
 ---
 
@@ -63,7 +63,7 @@
 
 | Pub       | title                                                                                     | link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
-| NeurIPS        | ⭐CATS: Are Self-Attentions Effective for Time Series Forecasting? | [📒](Time-Series/2024_NeurIPS_CATS.md) |
+| NeurIPS     | ⭐CATS: Are Self-Attentions Effective for Time Series Forecasting? | [📒](Time-Series/2024_NeurIPS_CATS.md) |
 | ICLR        | ⭐FITS: Modeling Time Series with 10K Parameters | [📒](Time-Series/2024_ICLR_FITS.md) |
 
 ---
