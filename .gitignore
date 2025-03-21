@@ -3,3 +3,6 @@ clutter/
 # 忽略 paper 文件夹
 paper/
 
+.vscode/
+
+Year_Pub_Name.md
