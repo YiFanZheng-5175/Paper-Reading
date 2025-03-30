@@ -76,6 +76,7 @@
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | Arxiv       | 📚A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective | [📒](Time-Series/2025_Arxiv_Survey%20Of%20Channel%20Strategy.md) |
 | KDD         | 💡DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting | [📒](Time-Series/2025_KDD_DUET.md) |
+| ICLR     | 💡TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis | [📒](Time-Series/2025_ICLR_TimeMixer++.md) |
 
 ## 📚 其他领域论文
 
