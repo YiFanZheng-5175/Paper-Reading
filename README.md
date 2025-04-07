@@ -8,7 +8,7 @@
 
 ## 🌌 时空相关论文
 
-### 📅 2022
+### 📅 2022以前
 
 | Pub       | title                                                                                     | link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
@@ -55,6 +55,12 @@
 
 ## ⏳ 时序相关论文
 
+### 🗓️ 2022以前
+
+| Pub       | title                                                                                     | link   |
+|-----------------|---------------------------------------------------------------------------------------------|:--------:|
+| NeurIPS     | ⭐M4Former: A Unified Framework for Multivariate Time Series Forecasting | [📒](Time-Series/2022_NeurIPS_M4Former.md) |
+
 ### 🗓️ 2023
 
 | Pub       | title                                                                                     | link |
@@ -67,6 +73,7 @@
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | NeurIPS     | ⭐CATS: Are Self-Attentions Effective for Time Series Forecasting? | [📒](Time-Series/2024_NeurIPS_CATS.md) |
 | ICLR        | ⭐FITS: Modeling Time Series with 10K Parameters | [📒](Time-Series/2024_ICLR_FITS.md) |
+
 
 ---
 
