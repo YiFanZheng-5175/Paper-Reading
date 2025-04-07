@@ -41,7 +41,7 @@
 | VLDB        | 💡BigST: Linear Complexity Spatio-Temporal Graph Neural Network for Traffic Forecasting on Large-Scale Road Networks | [📒](Spatial-Temporal/2024_VLDB_BigST.md) |
 | TKDE        | 📚Exploring Progress in Multivariate Time Series Forecasting: Comprehensive Benchmarking and Heterogeneity Analysis | [📒](Spatial-Temporal/2024_TKDE_BasicTS.md) |
 | ICDE        | 💡A Unified Replay-based Continuous LearningFramework for Spatio-Temporal Predictionon Streaming Data | [📒](Spatial-Temporal/2024_ICDE_URCL.md) |
-| Arxiv        | 💡STG-Mamba: Spatial-Temporal Graph Learning via Selective State Space Model | [📒](Spatial-Temporal/2024_Arxiv_STG-Mamba.md) |
+| Arxiv       | 💡STG-Mamba: Spatial-Temporal Graph Learning via Selective State Space Model | [📒](Spatial-Temporal/2024_Arxiv_STG-Mamba.md) |
 
 ---
 
@@ -66,6 +66,7 @@
 | Pub       | title                                                                                     | link |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | AAAI        | ⭐Linear: Are Transformers Effective for Time Series Forecasting? | [📒](Time-Series/2023_AAAI_Linear.md) |
+| ICLR        | ⭐TimesNet: Temporal 2D-Variation Modeling for General Time Series Analysis | [📒](Time-Series/2023_ICLR_TimesNet.md) |
 
 ### 🗓️ 2024
 
@@ -73,7 +74,8 @@
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | NeurIPS     | ⭐CATS: Are Self-Attentions Effective for Time Series Forecasting? | [📒](Time-Series/2024_NeurIPS_CATS.md) |
 | ICLR        | ⭐FITS: Modeling Time Series with 10K Parameters | [📒](Time-Series/2024_ICLR_FITS.md) |
-
+| ICLR        | 💡Periodicity Decoupling Framework for Long-term Series Forecasting | [📒](Time-Series/2024_ICLR_PDF.md) |
+| ICLR        | 💡TimeMixer: Decomposable Multiscale Mixing for Time Series Forecasting | [📒](Time-Series/2024_ICLR_TimeMixer.md) |
 
 ---
 
@@ -83,7 +85,8 @@
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | Arxiv       | 📚A Comprehensive Survey of Deep Learning for Multivariate Time Series Forecasting: A Channel Strategy Perspective | [📒](Time-Series/2025_Arxiv_Survey%20Of%20Channel%20Strategy.md) |
 | KDD         | 💡DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting | [📒](Time-Series/2025_KDD_DUET.md) |
-| ICLR     | 💡TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis | [📒](Time-Series/2025_ICLR_TimeMixer++.md) |
+| ICLR        | 💡TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis | [📒](Time-Series/2025_ICLR_TimeMixer++.md) |
+| ICLR        | 💡FreDF: Learning to Forecast in Frequency Domain | [📒](Time-Series/2025_ICLR_FreDF.md) |
 
 ## 📚 其他领域论文
 
