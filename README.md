@@ -60,6 +60,7 @@
 | Pub       | title                                                                                     | link   |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
 | NeurIPS     | 💡Autoformer: Decomposition Transformers with Auto-Correlation for Long-Term Series Forecasting | [📒](Time-Series/2021_NeurIPS_Autoformer.md) |
+| NeurIPS     | 💡Non-stationary Transformers: Exploring the Stationarity in Time Series Forecasting | [📒](Time-Series/2022_NeurIPS_Non-stationary%20Transformers.md) |
 | ICLR        | ⭐N-BEATS: Neural basis expansion analysis for interpretable time series forecasting | [📒](Time-Series/2020_ICLR_N-BEATS.md) |
 | ICLR        | 💡Reversible Instance Normalization for Accurate Time-Series Forecasting against Distribution Shift | [📒](Time-Series/2022_ICLR_RevIN.md) |
 
