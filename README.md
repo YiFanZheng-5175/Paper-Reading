@@ -59,7 +59,9 @@
 
 | Pub       | title                                                                                     | link   |
 |-----------------|---------------------------------------------------------------------------------------------|:--------:|
-| NeurIPS     | ⭐M4Former: A Unified Framework for Multivariate Time Series Forecasting | [📒](Time-Series/2022_NeurIPS_M4Former.md) |
+| NeurIPS     | 💡Autoformer: Decomposition Transformers with Auto-Correlation for Long-Term Series Forecasting | [📒](Time-Series/2021_NeurIPS_Autoformer.md) |
+| ICLR        | ⭐N-BEATS: Neural basis expansion analysis for interpretable time series forecasting | [📒](Time-Series/2020_ICLR_N-BEATS.md) |
+| ICLR        | 💡Reversible Instance Normalization for Accurate Time-Series Forecasting against Distribution Shift | [📒](Time-Series/2022_ICLR_RevIN.md) |
 
 ### 🗓️ 2023
 
@@ -76,6 +78,8 @@
 | ICLR        | ⭐FITS: Modeling Time Series with 10K Parameters | [📒](Time-Series/2024_ICLR_FITS.md) |
 | ICLR        | 💡Periodicity Decoupling Framework for Long-term Series Forecasting | [📒](Time-Series/2024_ICLR_PDF.md) |
 | ICLR        | 💡TimeMixer: Decomposable Multiscale Mixing for Time Series Forecasting | [📒](Time-Series/2024_ICLR_TimeMixer.md) |
+| ICLR        | 💡ModernTCN: A Modern Pure Convolution Structure for General Time Series Analysis | [📒](Time-Series/2024_ICLR_ModernTCN.md) |
+| NeurIPS     | ⭐CycleNet: Enhancing Time Series Forecasting through Modeling Periodic Patterns | [📒](Time-Series/2024_NeurIPS_CycleNet.md) |
 
 ---
 
@@ -87,6 +91,8 @@
 | KDD         | 💡DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting | [📒](Time-Series/2025_KDD_DUET.md) |
 | ICLR        | 💡TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis | [📒](Time-Series/2025_ICLR_TimeMixer++.md) |
 | ICLR        | 💡FreDF: Learning to Forecast in Frequency Domain | [📒](Time-Series/2025_ICLR_FreDF.md) |
+| ICLR        | 💡Timer-XL: Long-Context Transformers for Unified Time Series Forecasting | [📒](Time-Series/2025_ICLR_Timer-XL.md) |
+| AAAI        | 💡Unlocking the Power of Patch: Patch-Based MLP for Long-Term Time Series Forecasting | [📒](Time-Series/2025_AAAI_PatchMLP.md) |
 
 ## 📚 其他领域论文
 
